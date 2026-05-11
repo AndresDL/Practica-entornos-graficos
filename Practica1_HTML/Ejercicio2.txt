@@ -1,0 +1,103 @@
+Analizar los siguientes segmentos de código indicando en qué sección del documento HTML
+se colocan, cuál es el efecto que producen y señalar cada uno de los elementos, etiquetas, y atributos
+(nombre y valor), aclarando si es obligatorio.
+
+2.a
+<!-- Código controlado el día 12/08/2009 -->
+
+El segmento crea un comentario oculto dentro del codigo (solo visible dentro del documento HMTL) mediante la etiqueta <!-- -->. 
+Pueden ubicarse en cualquier sección del documento que el autor/es desee/n para realizar aclaraciones o vindrar información requerida.
+
+2.b
+<div id="bloque1">Contenido del bloque1</div>
+
+La etiqueta <div> define un bloque de contenido. En este caso muestra el texto "Contenido del bloque 1". El atriubto id no es obligatorio para 
+su funcionamiento, pero recomendado por si existen otros contenedores en el documento HTML. Pueden ubicarse tanto en el head, como el body 
+o fuera de ellos tambien.
+
+2.c
+<img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32"
+longdesc="detalles.htm" />
+
+La etiqueta <img> inserta una imagen. Se pueden colocar en cualquier sección del documento. En este caso como el atributo src esta vacio
+se mostrara el texto en el atributo alt con las dimensiones establecidas con width y height.
+ Y los atributos:
+    -src: es obligatorio y porta el link de la imagen que se quiere mostrar
+    -alt: no es obligatorio, se muestra cuando el link del atributo src falla o esta vacio 
+    -id: no es obligatorio, pero deberia incluirse para darle una identidad unica a la imagen
+    -name: no es obligatorio, le otorga un nombre a la imagen
+    -width y height: no son obligatorios, le dan dimensiones customizadas a la imagen
+    -longdesc: no obligatorio y obsoleto, el usuario debería poder acceder a una descripción detallada de la imagen en el archivo
+    detalles.html (supongo que debe ser .html y no .htm)
+
+2.d La etiqueta <meta> se utiliza para la inserción de metadatos (datos que brindan información del documento) y pueden ubicarse en cualquier
+sección del documento HTML.
+
+<meta name="keywords" lang="es" content="casa, compra, venta, alquiler " />
+
+En este caso se establece que las palabras clave estan en español y son casa, compra, venta, alquiler. Y los atributos:
+    -name="keywords": en este caso seria obligatorio para definir el nombre del conjunto de palabras claves. 
+    -lang="es": en este caso seria obligatorio para definir que las palabras claves estan en español.
+    -content="casa, compra, venta, alquiler ": en este caso seria obligatorio para definir el contenido del conjunto de palabras claves.
+
+
+<meta http-equiv="expires" content="16-Sep-2019 7:49 PM" />
+
+ Los servidores HTTP pueden usar el nombre de la propiedad especificada por el atributo http-equiv para crear un encabezado al estilo 
+ [RFC822] en la respuesta HTTP. En este caso resultará en el encabezado HTTP: "expires: 16-Sep-2019 7:49 PM". Los atributos:
+    -http-equiv="expires": se usa en vez de name para generar una respueseta de los servidores HTTP. Es obligatorio para poder crear un 
+    encabezado al estilo RFC822.
+    -content="16-Sep-2019 7:49 PM": es obligatorio para que se cree el encabezado "expires: 16-Sep-2019 7:49 PM".
+
+
+2.e
+<a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8"
+rel="help">Resumen HTML </a>
+
+La etiqueta <a> se utiliza para insertar vínculos o marcadores. En este caso se mostrara el texto "Resumen HTML" al se le puede hacer click para
+ir a la direccion http://www.e-style.com.ar/resumen.html. Se puede ubicar en cualquier sección del documento HTML. Los atributos:
+    -href="http://www.e-style.com.ar/resumen.html": contiene una URL al que el hipertexto apunta. es obligatorio para poder redireccionar hacia
+    la direccion deseada.
+    -type="text/html": establece el tipo del contenido en la etiqueta, no es obligatorio.
+    -hreflang="es": establece el lenguaje humano del contenido al que se apunta, no es obligatorio.
+    -charset="utf-8": establece que el contenido de la etiqueta se muestre de manera correcta universalmente, no es obligatorio.
+    -rel="help": establece que el contenido de la etiqueta dirije a algun tipo de ayuda (dependiendo del contexto) , no es obligatorio.
+
+
+2.f
+<table width="200" summary="Datos correspondientes al ejercicio vencido">
+    <caption align="top"> Título </caption>
+    <tr>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">A</th>
+        <th scope="col">B</th>
+        <th scope="col">C</th>
+    </tr>
+    <tr>
+        <th scope="row">1º</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <th scope="row">2º</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+La etiqueta <table> se utiliza para reprensentar datos con mas de una dimnsion en forma de tabla. Puede ser utlizado en cualquier sección del 
+documento HTML. En este caso se mostrara una tabla de con titulo (utilizando la etiqueta <caption>): "Título" con 3 columnas 
+A , B y C (insertadas utilizando la etiqueta <th> ) y 2 filas 1° y 2° (insertadas utilizando la etiqueta <tr>) y en total 6 campos vacios.
+Los atributos: 
+    -width="200": se utiliza para establecer el ancho de la tabla en 200 pixeles, no es obligatorio.
+    -summary="Datos correspondientes al ejercicio vencido": se utiliza como una descripción de la tabla, no es obligatorio.
+
+La etiqueta <caption> se utiliza para darle el nombre a una tabla. Aunque podria ser utilizada como una etiqueta para mostrar texto normalmente,
+ser asocia a tablas, por lo cual deberia usarse dentro de una etiqueta <table><table/>. Los atributos:
+    -align="top"
+
+La etiqueta <tr> se utiliza para insenrtar una fila dentro de una tabla. Debe encontrarse dentro de una etiqueta <table><table/> para que 
+cumpla su función correctamente. Los atributos:
+    -

@@ -1,0 +1,61 @@
+(1) ¿Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
+
+Para publicar información y distribuirla globalmente, se necesita un lenguaje entendido universalmente, 
+una especie de lengua franca de publicación que todas las computadoras puedan comprender potencialmente. 
+El lenguaje de publicación usado por la World Wide Web es el HTML (acrónimo de HyperText Markup Language, 
+Lenguaje para el Formato de Documentos de Hipertexto).
+
+El HTML fue desarrollado originalmente por Tim Berners-Lee mientras estaba en el CERN, y fue popularizado 
+por el navegador Mosaic desarrollado en el NCSA. Durante los años 90 ha proliferado con el crecimiento explosivo de la Web. 
+Durante este tiempo, el HTML se ha desarrollado de diferentes maneras. La Web depende de que los autores de páginas Web y 
+las compañías compartan las mismas convenciones de HTML. Esto ha motivado el trabajo colectivo en las especificaciones del HTML.
+
+El HTML 2.0 (noviembre de 1995) fue desarrollado bajo los auspicios de la Internet Engineering Task Force (IETF) 
+para codificar lo que era la práctica común a finales de 1994. HTML+ (1993) y HTML 3.0 (1995) propusieron versiones 
+mucho más ricas de HTML.Los esfuerzos del Grupo de Trabajo HTML del World Wide Web Consortium para codificar 
+la práctica común en 1996 condujeron a HTML 3.2 (enero de 1997). El HTML 4 desarrolla el lenguaje HTML con mecanismos para hojas de estilo, 
+ejecución de scripts, marcos, objetos incluidos, soporte mejorado para texto de derecha a izquierda y direcciones mezcladas, tablas más ricas 
+y mejoras en formularios, ofreciendo mejoras de accesibilidad para personas con discapacidades.El HTML 4.01 es una revisión de HTML 4.0 que 
+corrige errores e introduce algunos cambios desde la revisión anterior. HTML5 es la ultima version, evoluciono de las versiones anteriores para
+poder aplicarsele a las aplicaciones web y dispositivos mobiles modo
+ 
+
+(2) ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos con HTML?
+
+El W3C recomienda que los agentes de usuario y los autores (y en particular las herramientas de creación) produzcan documentos HTML 4.01 en vez de documentos HTML 4.0. 
+El W3C recomienda que los autores produzcan documentos HTML 4 en vez de documentos HTML 3.2. Por razones de compatibilidad con versiones anteriores, 
+el W3C también recomienda que las herramientas que interpreten HTML 4 sigan dando soporte a HTML 3.2 y a HTML 2.0.
+
+
+(3) En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y
+obsoleto?
+
+Un elemento o atributo desaprobado es aquel que ha quedado anticuado por la presencia de estructuras nuevas. 
+Los elementos desaprobados se definen en el manual de referencia en los lugares apropiados, pero claramente marcados como desaprobados. 
+Los elementos desaprobados pueden declararse obsoletos en versiones futuras de HTML. 
+
+Un elemento o atributo obsoleto es aquél para el cual no hay garantía de soporte por parte de un agente de usuario. 
+Los elementos obsoletos han dejado de estar definidos en la especificación, pero se enumeran por motivos históricos en la sección de cambios del manual de referencia.
+
+(4) Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+
+Una definición del tipo de documento (document type definition, DTD). El DTD define la sintaxis de las estructuras de formato. 
+El DTD puede incluir definiciones adicionales, tales como referencias a entidades de caracteres.
+
+(Estricto): Se utiliza cuando se desea un marcado limpio y estructural, separando completamente la presentación mediante CSS. 
+(Transicional): Es la opción más común, diseñada para cuando se necesita soporte de elementos de presentación y atributos obsoletos 
+(como align, bgcolor, <font>) que ya no se recomiendan.
+(Marcos): Incluye todo lo de la versión Transicional, pero se utiliza cuando el documento está compuesto por marcos (<frameset>) en lugar del 
+cuerpo tradicional (<body>).
+
+(5) Qué son los metadatos y cómo se especifican en HTML?
+
+Los metadatos son información sobre un documento y no especficimente contenido del mismo.
+
+En general, la especificación de metadatos implica dos pasos:
+
+    1 - Declaración de una propiedad y de un valor para esta propiedad. Esto puede hacerse de dos maneras:
+       1 - Desde dentro de un documento, por medio del elemento META.
+       2 - Desde fuera de un documento, vinculando los metadatos por medio del elemento LINK.
+    2 - Referencia a un perfil en el que se definen la propiedad y sus valores legales. 
+    Para designar un perfil, se usa el atributo profile del elemento HEAD.
