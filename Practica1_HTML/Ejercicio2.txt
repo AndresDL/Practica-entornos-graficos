@@ -95,9 +95,16 @@ Los atributos:
     -summary="Datos correspondientes al ejercicio vencido": se utiliza como una descripción de la tabla, no es obligatorio.
 
 La etiqueta <caption> se utiliza para darle el nombre a una tabla. Aunque podria ser utilizada como una etiqueta para mostrar texto normalmente,
-ser asocia a tablas, por lo cual deberia usarse dentro de una etiqueta <table><table/>. Los atributos:
+ser asocia a tablas, por lo cual deberia usarse dentro de una etiqueta <table></table>. Los atributos:
     -align="top"
 
-La etiqueta <tr> se utiliza para insenrtar una fila dentro de una tabla. Debe encontrarse dentro de una etiqueta <table><table/> para que 
-cumpla su función correctamente. Los atributos:
-    -
+La etiqueta <tr> se utiliza para insenrtar una fila dentro de una tabla. Debe encontrarse dentro de una etiqueta <table></table> para que 
+cumpla su función correctamente.
+
+La etiqueta <th> se utilliza para establecer que una celda dentro de la tabla es una cabecera. Debe incluirse dentro de una etiqueta 
+<table></table> para que funicione correctamente. Los atributos:
+    -scope="col": definen la relación entre la cabecera y el resto de las celdas de la columna correspondiente. Es decir, establece que el 
+    contenido dentro de la etiqueta <th> sera la cabecera de la columna de la tabla.
+
+La etiqueta <td> se utiliza para establecer que el contenido dentro de la etiqueta es parte de una celda regular de la tabla. Debe utilizarse
+dentro de la etiqueta <table></table> para funcionar correctamente. El contenido "&nbsp;" significa un espacio vacio en codigo.

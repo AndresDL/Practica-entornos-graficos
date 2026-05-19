@@ -1,0 +1,272 @@
+En cada caso, explicar las diferencias entre los segmentos de código y sus visualizaciones:
+
+3.a
+
+ I - <a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+
+En este segmento incial tenemos el texto "Click aquí para ir a Google" dentro de una etiqueta <a>, utilizada para insertar hipervinculos, con
+el atributo -href="http://www.google.com.ar"- con lo cual cuando se hace click en el texto se redicciona al url dentro del href.
+
+ II - <a href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a>
+
+En este segmento es similar al anterior, pero al agrerar el atributo -target="_blank"- en vez de que se salga de la pagina inicial y se 
+rediccione al url dentro de href se crea una nueva pagina en el browser con el url. Mismo efecto a clickear el texto con hipervinculo con el 
+boton del medio del mouse
+
+ III - <a href="http://www.google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help">
+
+En este segmento se le añaden adicionales atributos a la etiqueta, pero al no estar seguida de ningun contenido ni de un cierre de (</a>) no 
+se muestra el hipervinculo como en los casos anteriores.
+
+ IV - <a href="#">Click aquí para ir a Google</a>
+
+En este segmento se ve similar al I y II pero al solo tener un # en href y no la URL para google solo se le añade un # a la url existente del 
+sitio de visualizacion (LiveService con VisualStudio code en mi caso). 
+
+ V - <a href="#arriba">Click aquí para volver arriba</a>
+
+En este segmento con texto diferente a los casos I, II y IV se produce un efecto similar al caso IV donde al no tener una url real en el hrf,
+solo se suma "#arriba" a la url del sitio de visualización.
+
+ VI - <a name="arriba" id="arriba"></a>
+
+En este segmento sin texto entre las etiquetas y sin href (con lo cual no se crea un hipervinculo) solo se le da un nombre y 
+un id a etiqueta <a>
+
+
+3.b
+
+ I - <p><img src="im1.jpg" alt="imagen1" /><a href="http://www.google.com.ar">Click aquí</a></p>
+
+En este segmento se inserta un parrafo mediante la etiqueta <p> que contiene una imagen (usando la etiqueta <img>), se muestra el texto 
+alternativo, "imagen1", ya que no hay una imagen con la ruta en cuestion, y un hipervinculo (creado con la etiqueta <a>) "Click aquí" que 
+redirecciona a la url contenida en el atributo href
+
+ II - <p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> Click aquí</p>
+
+En este caso, a diferencia del I, es la imagen la que se inserta dentro de la etiqueta <a>; lo cual causa que el texto alternativo actue como 
+el hipervinculo y el texto "Click aquí" no tenga ninguna funcionalidad extra
+
+ III - <p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" />Click aquí</a></p>
+
+En este caso, al estar tanto la imagen como el texto "Click aquí" dentro de la etiqueta <a> ahora ambos segmentos actuan como un hipervinculo
+que redicciona hacia el url en href. A diferencia del caso I y II donde era la imagen o el texto "click aquí" el segmento accionable
+
+ IV - <p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> <a href="http://www.google.com.ar">Click aquí</a></p>
+
+En este caso, al estar tanto la imagen como el texto "click aquí" dentro de etiquetas <a> con el mismo href ambos funcionan como hipervinculo
+hacia la misma dirección. Pero a diferencia del caso III no son el mismo segmento de texto sino que son dos hipervinculos independientes que
+direccionan a la misma url
+
+
+3.c
+
+I - <ul>
+        <li>xxx</li>
+        <li>yyy</li>
+        <li>zzz</li>
+    </ul>
+
+En este caso se muestra una lista donde los contenidos son "xxx", "yyy", "zzz" en ese respectivo orden. Aunque al haber sido creada con la 
+etiquet <ul> da a entender que el orden no es importante
+
+II - <ol>
+        <li>xxx</li>
+        <li>yyy</li>
+        <li>zzz</li>
+     </ol>
+
+En este caso se muestra una lista con contenidos y orden iguales a la del caso I. Sin embargo, al ser definida con la etiqueta <ol> nos da 
+a entender que el orden es intencional y cambiarlo podria signifcar un cambio en el documento, con lo cual se itemizan con numeros a los 
+elementos para mostrar el orden de los mismos
+
+
+III -        <ol>
+                <li>xxx</li>
+            </ol>
+            <ol>
+                <li value="2">yyy</li>
+            </ol>
+            <ol>
+                <li
+                value="3">zzz</li>
+            </ol>
+
+En este caso se establecen 3 listan ordenadas a de un solo valor. Al no ser parte de la misma lista ordenada, los elementos se repesentarian 
+uno debajo del otro (por orden del html) pero los 3 serian itemizados con un 1 ya que son el primer elemento de la respectiva lista. Sin embargo,
+al utililzar el atributo value se puede definir la posición hipotetica que tomaria el elemento (aunque sea uno solo) con lo cual se itemizaria
+cada elemento de manera similar al caso II pero con mas espacio entre los elementos mostrados
+
+IV -    <blockquote>
+            <p>1. xxx<br/>
+            2. yyy<br/>
+            3. zzz</p>
+        </blockquote>
+
+En este caso se obtiene una vista igual al caso II pero se utiliza primero la etiqueta <blockquote> (utilizado par establecer que el contenido
+dentro de la etiqueta proviene de otra fuente) para identar el contenido del parrafo establecido con la etiqueta <p>. Luego para hacer paracer
+al contenido una lista se utiliza la etiqueta <br/> para hacer un corte de linea y que se continue debajo. Se obtiene a la vista una
+lista sin utilizar las etiquetas de listas
+
+3.d
+
+I - 
+<table border="1" width="300">
+    <tr>
+        <th>Columna 1</th>
+        <th>Columna 2</th>
+    </tr>
+    <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+    </tr>
+    <tr>
+        <td>Celda 3</td>
+        <td>Celda 4</td>
+    </tr>
+</table> - I
+
+En este caso se crea una tabla de 3 filas y 2 columnas utililzando la etiqueta <table> para establecer la estructura de una tabla y poder
+utilizar las etiquetas: 
+    -<tr>: se insertan 3 filas en la tabla
+    -<th>: se establencen las cabeceras de las 2 columnas de la tabla, "Columna 1" y "Columna 2"
+    -<td>: se establecen las celdas que contienen los datos de la tabla, en este caso "Celda 1...4"
+Tambien se establece el grosor de los bordes de la tabla con border="1" y el ancho de la tabla con width="300"
+
+
+<table border="1" width="300">
+    <tr>
+        <td><div align="center"><strong>Colum
+        na1</strong></div></td>
+        <td><div align="center"><strong>Columna 2</strong></div></td>
+    </tr>
+    <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+    </tr>
+    <tr>
+        <td>Celda 3</td>
+        <td>Celda 4</td>
+    </tr>
+</table> - II
+
+En este caso se obtiene una tabla igual a la del caso I, pero con la diferencia que en vez de utililzar la etiqueta <th> para que naturalmente
+se creen las celdas que representan la cabecera de cada columna se utiilza: <td><div align="center"><strong>Columna1</strong></div></td>
+donde:
+    -<td>: crean la celda que contendra los datos de la tabla
+    -<div align="center"><strong>: al alinear el contenedor al centro y utilizando la etiqueta <strong> se genera el mismo efecto de 
+    cabecera de una columna de la tabla con el texto que se incluya dentro del <div>
+
+
+3.e
+
+<table width="200">
+    <caption>
+        Título
+    </caption>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table> - I
+
+En este caso se establece una tabla en ancho 200 pixeles con un titulo "Título", utilizando la etiqueta <caption>, de 2 filas y 3 columnas. Sin embargo,
+todas las celdas estan vacias (contienen el codigo que hace refencia a " ") y muestran algun tipo de color gris.
+
+<table width="200">
+    <tr>
+        <td colspan="3"><div align="center">Título</div></td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table> - II
+
+En este caso se logra una tabla igual a la del caso I. Sin embargo, conceputalmente esta tabla tiene 3 filas (a diferencia de 2). En la primer
+fila, para lograr el mismo efecto de la etiqueta <caption> se establece una unica celda de la tabla que ocupa las 3 columanas de la misma 
+(mediante el atributo colspan="3") y mediante un <div align="center"> se centra el texto del contenedor para lograr formar un titulo identico
+al del caso I
+
+
+3.f
+
+<table width="200">
+    <tr>
+        <td colspan="3"><div align="center">Título</div></td>
+    </tr>
+    <tr>
+        <td rowspan="2" bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table> - I
+
+En este caso se generea una tabla de 200 pixeles de ancho, 3 filas y 3 columnas. Donde, en la primer fila para lograr el mismo efecto de la 
+etiqueta <caption> se establece una unica celda de la tabla que ocupa las 3 columanas de la misma (mediante el atributo colspan="3") y 
+mediante un <div align="center"> se centra el texto del contenedor para lograr formar un titulo. Luego, en la segunda fila se establecen 3 celdas
+vacias con color de fondo gris; ademas mediante el uso de <td rowspan="2"> se logra que una celda de la segunda fila pueda ocupar otro 
+espacio adicional en la tercera fila que solo contiene 2 celdas vacias de color gris
+
+
+<table width="200">
+    <tr>
+        <td colspan="3"><div
+        align="center">Título</div></td>
+    </tr>
+    <tr>
+        <td colspan="2"
+        bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table> - II 
+
+En este caso se genera una tabla similar a la del caso I (mismo titulo, contenido de celdas y color) con la principal diferencia que ahora 
+en vez de que una celda de la segunda fila ocupe espacio en la tercera fila, ahora una celda de la segunda fila ocupa espacio adicional 
+en la columna que tiene al lado  
+
+
+3.g
+
+<table width="200" border="1">
+    <tr>
+        <td colspan="3"><div
+        align="center">Título</div></td>
+    </tr>
+    <tr>
+        <td colspan="2"rowspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td width="50%">&nbsp;</td>
+    </tr>
+</table> - I 
+
+En este caso se crea una tabla de 3 filas y 2 columnas con 200 pixeles de tamaño y con grosor de bordes igual a 1. Donde, en la primer fila 
+para lograr el mismo efecto de la etiqueta <caption> se establece una unica celda de la tabla que ocupa las 3 columanas de la misma 
+(mediante el atributo colspan="3") y utililzando un <div align="center"> se centra el texto del contenedor para lograr formar un titulo. 
+Luego, en la 2da fila se establece una celda vacia normal y otra celda que oucupa espacio en la fila y columna posteriores, 
+logrando que se genere un rectangulo vacio que ocupa espacio en la tercera fila. Ademnas, en la 3ra fila se limita a la celda al 
+50% de su ancho para mantener el rectangulo creado
+
