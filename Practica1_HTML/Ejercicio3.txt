@@ -270,3 +270,125 @@ Luego, en la 2da fila se establece una celda vacia normal y otra celda que oucup
 logrando que se genere un rectangulo vacio que ocupa espacio en la tercera fila. Ademnas, en la 3ra fila se limita a la celda al 
 50% de su ancho para mantener el rectangulo creado
 
+
+3.h
+
+
+<form id="form1" name="form1" action="procesar.php" method="post" target="_blank">
+        <fieldset>
+            <legend>LOGIN</legend>
+                Usuario: <input type="text" id="usu1" name="usu1" value="xxx" />
+                <br/>
+                Clave: <input type="password" id="clave1" name="clave1" value="xxx" />
+        </fieldset>
+        <input type="submit" id="boton1" name="boton1" value="Enviar" />
+</form>
+
+En este primer caso se establece un formulario mediante la etiqueta <form> con el metodo POST y a ejecutar la funcion "procesar.php".
+Se establece un rectangulo cerrado con la etiqueta <fieldset> y se le añade una eitqueta al mismo con la etiqueta <legende> para darle
+un contexto a los contenidos del mismo. Lueo se establecen los campos de usuario y clave (completados con el atributo value) separados por 
+una etiqueta <br/>, y por ulitmo un input de tipo "submit" que opera como un boton para enviar los datos. Al no tener una dirección para el 
+post, se abre una nueva pagina con un error de conección.
+
+<form id="form2" name="form2" action="" method="get" target="_blank">
+    LOGIN
+    <br/>
+    <label>Usuario: <input type="text" id="usu2" name="usu2" /></label><br />
+    <label>Clave: <input type="text" id="clave2" name="clave2" /></label><br />
+    <input type="submit" id="boton2" name="boton2" value="Enviar" />
+</form>
+
+En este segundo caso, se omite utilizar utilizar la etiqueta <fieldset> con lo cual ya no hay un rectangulo encerrando el formulario, pero
+el tituo se mantiene como LOGIN. Los campos en este caso no estan completados ya que no poseen un atributo value y el segmento de contraseña
+ya no se esconde porque el type pasa a ser "text" en vez del "password" (como el primer caso). El boton para enviar los datos se mantiene igual,
+pero cambia el metodo del formulario a "get", con lo cual no se produce un error de conección ya que se mantiene dentro de la pagina local.
+
+<form id="form3" name="form3" action="mailto:xx@xx.com” enctype=text/plain method="p
+    ost" target="_blank">
+    <fieldset>
+        <legend>LOGIN</legend>
+        Usuario: <input type="text" id="usu3" name="usu3" /><br />
+        Clave: <input type="password" id="clave3" name="clave3" />
+    </fieldset>
+    <input type="reset" id="boton3" name="boton3" value=
+    "Enviar" />
+</form>
+
+En este tercer caso la visualizacion es igual a la del caso 1, pero la acción cambia a "mailto" con lo cual se enviaria un mail a la dirección
+incluida luego de los ":". Sin embargo, al tener el type "reset" en el boton los datos escritos en los campos del formularios solo se borran
+y no se envia el mismo.
+
+
+
+3.i
+
+<label>Botón 1
+        <button type="button" name="boton1" id="boton1">
+        <img src="logo.jpg" alt="Botón con imagen " width="30" height="20" /><br />
+        <b>CLICK AQUÍ</b></button></label>
+
+En este primer caso se muestra un boton con la etiqueta "boton 1" a su izquierda que tiene una imagen (pero al no estar el archivo se muestra
+el texto alterno en el atributo "alt") con ancho 30 y alto 20. Tambien, el boton tiene el texto "CLICK AQUÍ", con las letras en negrita usando
+la etiqueta <b>, dentro del mismo.
+
+<label>Botón 2
+    <input type="button" name="boton2" id="boton2" value="CLICK AQUÍ" />
+</label>
+
+En este segundo caso se muetra un boton con la etiqueta "boton 2" a su izquierda sin imagen. El mayor cambio es la utilización de la etiqueta
+<input> pero adopta la apariencia de un boton mediante el atirubto type="button" y el value="CLICK AQUI".
+
+
+
+3.j
+
+<p>
+    <label><input type="radio" name="opcion" id="X" value="X" />X</label><br/>
+    <label><input type="radio" name="opcion" id="Y" value="Y" />Y</label>
+</p>
+
+En este primer caso se establecen 2 campos de inputs que se visualizan como circulos usando type="radio" dando la imagen de elegin una opción 
+entre X o Y. Al tener ambos el mismo name="opcion" cuando se elige una opción, por lo tanto no se puede elegir la otra y viceverza.
+
+<p>
+    <label><input type="radio" name="opcion1" id="X" value="X" />X</label><br />
+    <label><input type="radio" name="opcion2" id="Y" value="Y" />Y</label>
+</p>
+
+En este segundo caso, la visualización es igual al anterior, pero al tener cada input un name distinto, ambas opciones pueden ser elegidas.
+Tambien, una vez elegida la opción el circulo permanecera coloreado.
+
+
+
+3.k
+
+<select name="lista">
+    <optgroup label="Caso 1">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+    <optgroup label="Caso 2">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+</select>
+
+En este primer caso se establece una caja que genera un dropdown menu mediante la etiqueta select. Al hacer click en dicha caja, se abre 
+el menu y se pueden visualizar 2 secciones, caso 1 y caso 2, generadas usando la eitqueta <optgroup> y nombradas con el atributo label.
+Ambos campos contienen el mismo contenido "Mayo y Junio" insertados mediante la etiqueta <option>.
+
+<select name="lista[]" multiple="multiple">
+    <optgroup label=" Caso 1">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+    <optgroup label=" Caso 2">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+</select>
+
+En este segundo caso, al establecer el atributo multiple="multiple" en la definición de la etiqueta <select>, se establece que multiples
+de los contenidos pueden ser selecciondas, por lo cual ahora se visualiza una caja con los mismos contenidos que el caso anterior, pero ahora 
+se puede usar el mouse para subir y bajar dentro de la caja.
+
