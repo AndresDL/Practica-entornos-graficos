@@ -1,0 +1,27 @@
+
+
+.topbar{
+    background-color: tomato;
+    margin-top: 10px;
+}
+
+.sidebar{
+    background-color: palevioletred;
+    margin-top: 10px;
+}
+
+.midbar{
+    background-color: greenyellow;
+    margin-top: 10px;
+}
+
+.bottombar{
+    background-color: crimson;
+    margin-top: 10px;
+}
+
+.rectangle{
+    background-color: violet;
+    margin-top: 10px;
+}
+
