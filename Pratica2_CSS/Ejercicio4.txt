@@ -1,0 +1,77 @@
+
+Utilizando el segmento de codigo css:
+
+    * {color:green; }
+
+    a:link {color:gray }
+
+    a:visited{color:blue }
+
+    a:hover {color:fuchsia }
+
+    a:active {color:red }
+
+    p {font-family: arial,helvetica;font-size: 10px;color:black; }
+
+    .contenido{font-size: 14px;font-weight: bold;}
+
+
+Con este primer caso de codigo HTML:
+
+    <body>
+        <p class="contenido" style="font-weight: normal;">
+        Este es un texto ...............</p>
+        <table>
+            <tr>
+                <td>Y esta es una tabla.......</td>
+            </tr>
+            <tr>
+                <td><a href="http://www.google.com.ar" target="_blank">con un
+                enlace</a></td>
+            </tr>
+        </table>
+    </body>
+
+El primer texto contenido dentro de la etiqueta <p> con el atributo class="contendio" se vera afectado tanto por el selector de tipo
+p {font-family: arial,helvetica;font-size: 10px;color:black;} como por el selector de clase .contenido{font-size: 14px;font-weight: bold;}. 
+
+En cuanto a la etiqueta <p>, ocurre que al tener 2 valores para font-size en 2 selectores distintos se sobreescribe el valor del selector p 
+por el del selector .contenido ya que es mas especifico. Tambien, al contar la etiqueta <p> con el atributo style="font-weight: normal;" 
+se sobre escribe la  definición del selector .contenido (font-weight:bold;) ya que es mas especifico. Por ultimo, se sobreescribe la definición 
+del primer selector * {color:green;}, el cual causaria que todo texto sea de color verde, ya que se aclara en el selector p color: black;.
+
+En cuanto a la etiqueta <table>, el primer texto contenido dentro de la primera fila (insertada con <tr>) y en la primera columna (insertada
+con <td>) sera de color verde, debido a la regla * {color:green;} y que no hay otra mas especifica que la afecte. En cambio, el texto
+contenido en la segunda celda de la segunda fila se vera afectado por las regas de los selectores de tipo a:link {color:gray },
+a:visited{color:blue }, a:hover {color:fuchsia } y a:active {color:red }. 
+
+En cuanto a la etiqueta <a>, como mencione anteirormente se ve afectada por 4 reglas. a:link {color:gray } causara que todo link que no alla
+sido visitado sea de color gris, estado inical del texto "con un enlace"; a:visited{color:blue } causara que todo link que el usuario alla
+visitado sea de color azul, estado final del texto "con un enlace"; a:hover {color:fuchsia } causara que cuando el usuario coloque su raton
+sobre el link este se tornde de color fuchsia, segundo estado del texto "con un enlace";  a:active {color:red } causara que cuando el usuario
+haga click sobre el link este se torne de color rojo (por cuanto tiempo dure el click, si se mantiene apretado el raton se torna del color
+establecido hasta que se suelte), estado tercero del texto "con un enlace".
+
+
+Con este segundo caso de codigo html:
+
+    <body class="contenido">
+        <p> Este es un texto................</p>
+        <table>
+            <tr>
+                <td>Y esta es una tabla.......</td>
+            </tr>
+            <tr>
+                <td><a href="http://www.google.com.ar">con un enlace</a></td>
+            </tr>
+        </table>
+    </body>
+
+La unica diferencia con el caso anterior es la incluisión del atributo class="contenido" definición de la etiqueta <body> con lo cual causa
+que todo texto contenido dentro de la etiqueta <body>, y dentro de otras etiquetas (como ocurriria en el caso de la etiqueta <p>, pero
+no de las <td> debido a la profundidad de las mismas) se vea afecta por las relgas del selector de clase .contenido
+{font-size: 14px;font-weight: bold;}. Al estar la etiqueta <p> afectada por las reglas del selector de tipo p 
+{font-family: arial,helvetica;font-size: 10px;color:black; } sobreescribe tanto * {color:green; } como .contenido (menos font-weight:bold;)
+ya que tiene otros valores para los mismos atributos.
+
+Luego la visualización del resto de los componentes es igual a la descripta anteriormente.

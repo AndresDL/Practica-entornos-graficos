@@ -1,0 +1,213 @@
+1. ¿ Qué es CSS y para qué se usa?
+
+    CSS son las siglas de hojas de estilo en cascada. Como HTML, CSS (Cascading Style Sheets) u Hojas de estilo en cascada en español, no es 
+    realmente un lenguaje de programación, tampoco es un lenguaje de marcado. Es un lenguaje de hojas de estilo, es decir, te permite 
+    aplicar estilos de manera selectiva a elementos en documentos HTML.
+
+2. CSS utiliza reglas para las declaraciones de estilo, ¿cómo funcionan?
+
+    El modo de funcionamiento de las CSS consiste en definir, mediante una sintaxis especial, la forma de presentación que le aplicaremos a:
+
+    I- Un sitio web entero, de modo que se puede definir la forma de todo el web de una sola vez.
+
+    II- Un documento HTML o página, se puede definir la forma, en un pequeño trozo de código en la cabecera, a toda la página.
+
+    III- Una porción del documento, aplicando estilos visibles en un trozo de la página.
+
+    IV- Una etiqueta en concreto, llegando incluso a poder definir varios estilos diferentes para una sola etiqueta.
+
+    
+
+3. ¿ Cuáles son las tres formas de dar estilo a un documento?
+
+    Podemos asociar las reglas de estilo a las marcas HTML de tres maneras:
+
+    I- directamente a la marca
+
+    II- en el head de la página
+
+    III- agrupar las reglas de estilo en un archivo independiente con extensión *.css
+
+
+4. ¿Cuáles son los distintos tipos de selectores más utilizados? Ejemplifique cada uno.
+
+    I- Selector Universal
+
+        El selector universal, escrito "*", se corresponde con el nombre de cualquier tipo de elemento. Es equivalente con cualquier 
+        elemento en la estructura del documento. Si el selector universal no es el único componente de un selector simple, el "*" puede omitirse.
+        Por ejemplo:
+
+        *[LANG=fr] y [LANG=fr] son lo mismo.
+        *.warning y .warning son lo mismo.
+        *#myid y #myid son lo mismo.    
+    
+    II- Selectores de tipos
+
+        Un selector de tipo se corresponde con el nombre de un tipo de elemento en el lenguaje del documento. Un selector de tipo equivale 
+        con cada instancia del tipo de elemento en la estructura del documento. La siguiente regla equivale a todos los elementos H1 de la 
+        estructura del documento:
+
+        H1 { font-family: sans-serif }
+
+    III- Selectores de desecendientes
+
+        Selectores que se corresponden con un elemento que es el descendiente de otro elemento en la estructura del documento 
+        (ej., "Que equivalga a aquellos elementos EM que están contenidos en un elemento H1"). Los selectores de descendientes expresan 
+        tal relación dentro de un patrón. Un selector de descendiente se compone de dos o más selectores separados por un espacio en blanco. 
+
+        Por ejemplo, considere las siguientes reglas:
+
+        H1 { color: red }
+        EM { color: red }
+
+        Aunque la intención de estas reglas es agregar énfasis al texto cambiando su color, el efecto se perderá en un caso como:
+
+        <H1>El título es <EM>muy</EM> importante</H1>
+
+        Resolvemos este caso complementando las reglas anteriores con una regla que asigna un color azul al texto siempre que un EM aparezca 
+        en cualquier lugar dentro de un H1:
+
+        H1 { color: red }
+        EM { color: red }
+        H1 EM { color: blue }
+
+    IV- Selectores de hijos
+
+        Un selector de hijo equivale cuando un elemento es el hijo de algún elemento. Un selector de hijo se compone de dos o más selectores 
+        separados por ">".
+
+        La siguiente regla asigna el estilo de todos los elementos P que son hijos de BODY:
+
+        BODY > P { line-height: 1.3 }
+
+    V- Selectores de hermanos adyacentes
+
+        Los selectores de hermanos adyacentes tiene la siguiente sintaxis: E1 + E2, donde E2 es el sujeto del selector. El selector equivale si 
+        E1 y E2 comparten el mismo padre en la estructura del documento y E1 precede inmediatamente a E2. En algunos contextos, los elementos 
+        adyacentes generan objetos con formato cuya presentación es operada automáticamente (ej., cerrando los márgenes verticales entre cajas 
+        adyacentes). El selector "+" permite a los autores especificar un estilo adicional para los elementos adyacentes.
+
+        De este modo, la siguiente regla establece que cuando un elemento P sigue inmediatamente a un elemento MATH, no debe tener sangría:
+
+        MATH + P { text-indent: 0 } 
+
+        El siguiente ejemplo reduce el espacio vertical que separa un H1 y un H2 que lo sigue inmediatamente:
+
+        H1 + H2 { margin-top: -5mm }   
+
+
+    VI- Selectores de atributos
+
+        CSS2 permite a los autores especificar reglas que sean equivalentes con atributos definidos en el documento fuente. 
+
+        Los valores de los atributo deben ser identificadores o cadenas. La distinción entre mayúsculas/minúsculas en los nombres y valores de 
+        los atributos de los selectores depende del lenguaje del documento. Por ejemplo, el siguiente selector de atributo equivale a todos los 
+        elementos H1 que especifican el atributo "title", cualquiera sea su valor:
+
+        H1[title] { color: blue; }
+
+        En el ejemplo siguiente, el selector equivale a todos los elementos SPAN cuyo atributo "class" tiene exactamente el valor "ejemplo":
+
+        SPAN[class=ejemplo] { color: blue; }
+
+    VII- selectores de clases
+
+        Por ejemplo, podemos asignar información de estilo a todos los elementos con class~="pastoral" como sigue:
+
+        *.pastoral { color: green }  /* todos los elementos con class~=pastoral */
+
+        o simplemente
+
+        .pastoral { color: green }  /* todos los elementos con class~=pastoral */
+
+    VIII- selectores de ID
+    
+        El atributo ID de un lenguaje de documento le permite a los autores asignar un identificador a una instancia del elemento dentro de 
+        la estructura del documento. Los selectores ID de CSS equivalen a una instancia del elemento basado en su identificador. 
+        Un selector ID de CSS contiene un "#" seguido inmediatamente por el valor de ID.
+
+        El siguiente selector de ID equivale al elemento H1 cuyo atributo ID tiene el valor "capitulo1":
+
+        H1#capitulo1 { text-align: center }
+
+
+
+5. ¿Qué es una pseudo-clase? Cuáles son las más utilizadas aplicadas a vínculos?
+
+    Las pseudo-clases clasifican a los elementos basado en características más allá de su nombre, atributos o contenido; en principio, 
+    atributos que no pueden deducirse de la estructura del documento. Las pseudo-clases pueden ser dinámicas, en el sentido de que un elemento
+    puede adquirir o perder una pseudo-clase a medida que el usuario interactúa con el documento. La excepción es ':first-child', que puede 
+    deducirse de la estructura del documento. 
+
+    I- La pseudo-clase :first-child
+
+        La pseudo-clase :first-child equivale a un elemento que es el primer hijo de algún otro elemento.
+
+        En el ejemplo siguiente, el selector equivale a cualquier elemento P que sea el primer hijo de un elemento DIV. 
+        La regla elimina el sangrado del primer párrafo de un DIV:
+
+        DIV > P:first-child { text-indent: 0 }
+
+        Este selector sería equivalente a P dentro de DIV en el siguiente fragmento:
+
+        <P> El último P antes de la nota.
+        <DIV class="nota">
+        <P> El primer P dentro de la nota.
+        </DIV>
+
+    II- Las pseudo-clases vínculo: :link y :visited
+
+        Las aplicaciones del usuario normalmente muestran los vínculos no visitados de un modo diferenciado de aquellos previamente visitados. 
+        CSS proporciona las pseudo-clases ':link' y ':visited' para distinguirlos:
+
+        La pseudo-clase :link se aplica a los vínculos que aún no han sido visitados.
+        La pseudo-clase :visited se aplica una vez que el vínculo ha sido visitado por el usuario. 
+
+    III- Las pseudo-clases dinámicas: :hover, :active y :focus
+
+        Las aplicaciones del usuario interactivas a veces cambian el procesamiento en respuesta a las acciones del usuario. CSS proporciona 
+        tres pseudo-clases para los casos comunes:
+
+         () La pseudo-clase :hover se aplica mientras el usuario señala un elemento (con algún dispositivo para apuntar), pero no lo activa. 
+            Por ejemplo, una aplicación del usuario visual puede aplicar esta pseudo-clase cuando el cursor (el puntero del ratón) se mueve 
+            por encima de una caja generada por el elemento. 
+
+         () La pseudo-clase :active se aplica mientras un elemento está siendo activado por el usuario. Por ejemplo, el lapso durante el cual el
+            usuario presiona el botón del ratón y lo suelta.
+
+         () La pseudo-clase :focus se aplica mientras un elemento tiene el foco (acepta eventos del teclado u otras formas de entrada de texto). 
+
+        Estas pseudo-clases no son mutuamente excluyentes. Un elemento puede recibir varias de ellas al mismo tiempo. 
+
+    IV- La pseudo clase :lang
+
+        Si el lenguaje del documento especifica cómo se determina el lenguaje humano de un elemento, es posible escribir selectores en CSS 
+        que coincidan con elementos basado en su lenguaje. La pseudo-clase ':lang(C)' equivale si el elemento está en lenguaje C.
+
+
+
+6. ¿Qué es la herencia?
+
+    Algunos valores son heredados por los hijos de un elemento en la estructura del documento. Cada propiedad define si se hereda o no.
+
+    Suponga que hay un elemento H1 con un elemento enfatizado (EM) adentro:
+
+    <H1>El título <EM>es</EM> importante!</H1>
+
+    Si no se ha asignado ningún color al elemento EM, el énfasis en "es" heredará el color del elemento padre, de modo que si H1 tiene un 
+    color azul, el elemento EM será igualmente azul. 
+
+
+
+7. ¿En qué consiste el proceso denominado cascada?
+
+    La cascada de CSS, asigna una fuerza a cada regla de estilo. Cuando varias reglas se aplican, la de mayor fuerza toma preponderancia.
+
+    De forma predefinida, las reglas en las hojas de estilo del autor tienen más fuerza que las reglas en las hojas de estilo del usuario. 
+    La preponderancia se revierte, sin embargo, con la reglas "!important". Todas las reglas que el usuario y el autor especifican tienen mayor 
+    fuerza que las reglas de la hoja de estilo predeterminada en las aplicaiones de usuario.
+
+    Las hojas de estilo importadas también forman la cascada y su fuerza depende del orden en la importación. Las reglas especificadas en 
+    una hoja de estilo dada sustituyen las reglas importadas desde otras hojas de estilo. Las hojas de estilo importadas pueden a su vez 
+    importar y sustituir otras hojas de estilo, recursivamente, y se aplican las mismas reglas de preponderancia. 
+

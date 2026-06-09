@@ -1,0 +1,85 @@
+
+El segento de codigo css: 
+
+    p.quitar {
+    color: red;
+    }
+
+Afecta, por un lado, al segmento de codigo html: 
+
+    <p class="quitar">
+        Este párrafo debe ser quitado de la obra…
+        <br />xxxxxxxxxxxxxxxxxxxxxxxxx
+    </p>
+
+En el codigo css se establece que todo texto contenido dentro de la etiqueta <p>, y si esta tiene como atirbuto class="quitar", sera de color
+rojo.
+
+El segmento de codigo css:
+
+    .importante {
+    font-size: 20px;
+    }
+
+Afecta, por un lado, al segmento de codigo html:
+
+    <p class="importante">
+        Y este es el párrafo más importante de la obra…
+        <br />xxxxxxxxxxxxxxxxxxxxxxxxx
+    </p>
+
+En el codigo css se establece que todo texto contenido en cualquier etiqueta html que tenga el atributo class="importante" tendra tamañano
+fuente de 20 pixeles.
+
+El segmetno de codigo css: 
+
+    *.desarrollo {
+    font-size: 8px;
+    }
+
+Afecta al segmento de codigo HTML: 
+
+    <p class="desarrollo">
+        En este primer párrafo trataremos lo siguiente:
+        <br />xxxxxxxxxxxxxxxxxxxxxxxxx
+    </p>
+
+En en la definición del css se establece que toda etiqueta que tenga el atributo class="desarrollo", el texto contenido dentro de la misma tendra
+tamaño fuente de 8 pixeles. 
+
+El segmento de codigo HTML:
+
+    <p>
+        En este otro párrafo trataremos otro tema:<br />
+        xxxxxxxxxxxxxxxxxxxxxxxxx
+    </p>
+
+No se ve afectado por el selector p.quitar ya que aunque se utiliza la etiqueta <p> no se le otorga a esta el atribuo class="quitar" por lo cual
+no cumple con el requerimiento.
+
+El segmento de codigo HTML:
+
+    <h1 class="quitar">Este encabezado también debe ser quitado de la obra</h1>
+
+No se ve afectado por el selector p.quitar ya que aunque cuenta con el atributo class="quitar", no se utiliza la etiqueta <p> por lo cual no 
+cumple con el requerimiento.
+
+El segmento de codgio HTML:
+
+    <p class="quitar importante">Se pueden aplicar varias clases a la vez</p>
+
+Se ve afectado tanto por el selector p.quitar, ya que cumple con el requerimiento de utilizar la etiqueta <p> y tener el atributo
+class="quitar", y el selecto .importante ya que al estar dentro del atributo class, por la definición del selector, cumple con el requerimiento
+del mismo. Notese que si quitar e importante cambian de orden "class="importante quitar"" el fragmento html seria afectado por ambos selectores
+de igual manera.
+
+
+Notese que todos los segmentos de codigo css podrian ser definidos como hoja de estilo interno:
+
+    <style>  p.quitar {
+    color: red;
+    } </style>     por ejemplo
+
+O externo en un archivo de tipo .css y linkeada con el archivo .html mediante la etiqueta <link>:
+
+    <link href="hojadestilos.css" rel="stylesheet">      por ejemplo

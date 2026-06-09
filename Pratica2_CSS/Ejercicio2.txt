@@ -1,0 +1,62 @@
+
+El segmento de codigo css:
+
+    p#normal {
+    font-family: arial,helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    }
+
+Afecta al segmento de codigo html:
+
+    <p id="normal">Este es un párrafo</p>
+
+Se declara que todo texto contenido dentro de la etiqueta <p>, y que esta que contenga el atributo id="normal", tenga el formato 
+arial, helvetica; tamaño fuente de 11px y que este en negrita.
+
+
+El segmento de codigo css:
+
+    *#destacado {
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+    }
+
+Afecta a los segmento des codigo html:
+
+    <p id="destacado">Este es otro párrafo</p>
+
+    <table id="destacado"><tr><td>Esta es una tabla</td></tr></table>
+
+A diferencia del caso anterior, al poner un * en la declaración del estilo se le aplicara a toda etiqueta que contenga el atributo 
+id="destacado". Luego, el texto se presenta con una visualización normal (no hay cambios en cuanto al formato, tamaño, etc) pero dentro de un 
+rectangulo de color azul y de bordes de 2px.
+
+
+El segmento de codigo css:
+    
+    #distinto {
+    background-color: #9EC7EB;
+    color: red;
+    }
+
+Afecta al segmento de codigo HTML:
+     
+    <p id="distinto">Este es el último párrafo</p>
+
+En este ultimo caso se establece que toda etiqueta que tenga el atributo id="distinto" tendra un fondo de color #9EC7EB (visualmente celeste),
+lo cual cambia siendo el color default de una pagina blanco, y todo texto contenido dentro la misma sera de color rojo.
+
+Notese que todos los segmentos de codigo css podrian ser definidos como hoja de estilo interno:
+
+    <style>  #distinto {
+    background-color: #9EC7EB;
+    color: red;
+    } </style>     por ejemplo
+
+O externo en un archivo de tipo .css y linkeada con el archivo .html mediante la etiqueta <link>:
+
+    <link href="hojadestilos.css" rel="stylesheet">      por ejemplo
+
+
