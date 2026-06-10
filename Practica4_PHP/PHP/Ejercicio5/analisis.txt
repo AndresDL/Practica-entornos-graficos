@@ -1,0 +1,8 @@
+
+
+Partiendo de visitas.php en el body se ejecuta el archivo contador.php con '<?php include("contador.php")?>'. En contador.php primero se guarda
+el archivo creado contador.dat para poder operar sobre el. Se abre el archivo con permisos para lectura, y luego se lee el mismo y se le asigna
+el tamaño del archivo a la variable $cont el cual comienza en 0 ya que contador.dat tiene solamente un 0 dentro de el. Se ciera el archivo,
+y luego se lo abre nuevamente con permisos de escriuta, se suma 1 al contador y se guarda la modificación en contador.dat, finalmente se
+cierra el archivo. Ahora cada vez que se recargue la pagina se podra ver como incrementa por 1 el valor de $cont. Para volver a ponerlo en 0
+habra que fisicamente poner 0 en contador.dat.

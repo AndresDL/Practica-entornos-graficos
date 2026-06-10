@@ -1,0 +1,33 @@
+
+
+La funcion comprobar_nombre_usuario sirve para hacer una validación sobre un nombre de usuario que se pasa por parametro. Primero se valida
+que la longitud del mismo este entre 3 o 20 caracteres, si es mas corto o mas largo no es valido y se retorna false. Habiendo pasado la primera
+validación, luego se compruebe si los caracteres del nombre de usuario son validos mediante un for donde se itera por cada caracter hasta 
+la longitud total del nombre de usuario. Esto se hace utilizando por un lado strpos() con el cual se comparara la cadena entera de $permitidos
+con el unico caracter devuelto de substr($nombre_usuario,$i,1) que usara $i como indice para saber en posición del nombre de usuario pararse; si
+alguno de los caracteres del nombre de usuario no se encuentra en permitidos, strpos() devuelve un false se mostrara un mensaje de error. Si luego
+de iterar la longitud entera del nombre de usuario no se encontro ningun caracter ilegal, se muestra que el nombre de usuario es valido.
+
+
+Podemos probar el funcionamiento de la funcion comprobar_nombre_usuario con el script: 
+
+    <html>
+    <head><title>Script para funcion</title></head>
+        <body>
+            <?php 
+                include("funcion.php");
+                $username= "andrea";
+                echo $rta = comprobar_nombre_usuario($username);
+            ?>
+        </body>
+    </html>
+
+Las salidas luego serian por ejemplo: 
+
+    a1 no es válido
+
+    a12345 es válido
+
+    asdfasfasfsfsafsdfasfasfasfasfasfasfasfasfasfs no es válido
+
+    %$&#@ no es válido

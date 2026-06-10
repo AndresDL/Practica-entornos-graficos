@@ -1,0 +1,32 @@
+
+Al ejecutar el segmento de codigo: 
+
+    <?php 
+        echo "El $flor $color \n"; 
+        include 'datos.php'; 
+        echo " El $flor $color"; 
+    ?>
+
+La primera salida que podemos observar es:
+
+    (Punteo el path para abreviarlo)
+
+    Warning: Undefined variable $flor in C:\..\Practica4_PHP\Ejercicio4\rta.php on line 2
+
+    Warning: Undefined variable $color in C:\..Practica4_PHP\Ejercicio4\rta.php on line 2
+    
+    El  
+
+Esto ocurre ya que cuando se realiza el primer echo 'echo "El $flor $color \n";' ambas variables $flor y $color aun no tienen un valor asignado,
+provocando un mensaje de error. Al llamar al archivo datos.php mediante 'include datos.php;'  se ejecuta el segmento de codigo:
+
+    <?php 
+        $color = 'blanco'; 
+        $flor = 'clavel'; 
+    ?>
+
+Con lo cual resulta que se le asignan valores a las variablees $color y $flor, con lo cual ahora la visualización es la siguiente: 
+
+    El clavel blanco 
+
+Que es lo que se queria mostrar desde un principio.

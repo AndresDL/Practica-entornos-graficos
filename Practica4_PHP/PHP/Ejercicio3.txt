@@ -1,0 +1,63 @@
+
+Explicar para que se utilizan los siguientes segmentos de codigo:
+
+A- 
+    <html>
+        <head><title>Documento 1</title></head>
+        <body>
+            <?php
+                echo "<table width = 90% border = '1' >";
+                $row = 5;
+                $col = 2;
+                for ($r = 1; $r <= $row; $r++) {
+                    echo "<tr>";
+                    for ($c = 1; $c <= $col;$c++) {
+                        echo "<td>&nbsp;</td>\n";
+                    } 
+                    echo "</tr>\n";
+                }
+                echo "</table>\n";
+            ?>
+        </body>
+    </html>
+
+    El codigo se utiliza para crear una tabla que ocupa el 90% de la pantalla con bordes de grosor 1, la misma tiene 2 columnas con 5 filas 
+    cada una, generando 10 espacios vacios. Al generar las variables $row y $col luego se pueden crear las filas con la sentencia for, y las
+    columanas con otra sentencia for dentro de la anterior.
+
+B- 
+
+    <html>
+    <head><title>Documento 2</title></head>
+        <body>
+            <?php
+                if (!isset($_POST['submit'])) {
+            ?>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    Edad: <input name="age" size="2">
+                    <input type="submit" name="submit" value="Ir">
+                </form>
+            <?php
+                }
+                else {
+                    $age = $_POST['age'];
+                    if ($age >= 21) {
+                    echo 'Mayor de edad';
+                    }
+                    else {
+                        echo 'Menor de edad';
+                    }
+                }
+            ?>
+        </body>
+    </html>
+
+    El codigo se utiliza para generar un formulario donde al enviar una edad se dice si corresponde a alguien menor de edad o mayor de edad.
+    Antes de mostrar el formulario se valida que el formulario aun no haya sido enviado con el if (!isset($_POST['submit'])),comprobando que en 
+    el array asociativo $_POST el campo "submit" este vacio (cuando se envie pasa a tener el valor "Ir"). Luego de enviar el formulario, se 
+    retorna al documento en ejeccuión debido al atributo action="<?php echo $_SERVER['PHP_SELF']; ?>" y como ahora el campo submit del array
+    $_POST no esta vacio, se pasa por la sentencia else del if donde se le asigna a la variable $age el valor ingresado por formulario en el 
+    input con name="age", luego se valida si la edad es mayor o igual o menor a 21 para determinar si es mayor o menor de edad.
+
+
+    

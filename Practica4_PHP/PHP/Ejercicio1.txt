@@ -1,0 +1,77 @@
+<?php
+function doble($i) { 
+    return $i*2; 
+}
+
+$a = TRUE; 
+$b = "xyz"; 
+$c = 'xyz'; 
+$d = 12; 
+
+echo gettype($a); 
+echo gettype($b); 
+echo gettype($c);
+echo gettype($d);
+
+if (is_int($d)) { 
+    $d += 4; 
+}
+
+if (is_string($a)) { 
+    echo "Cadena: $a"; 
+}
+
+$d = $a ? ++$d : $d*3;
+
+$f = doble($d++);
+
+$g = $f += 10;
+
+echo $a, $b, $c, $d, $f , $g; 
+?>
+
+1- Identificar las variables y su tipo:
+
+    A- $a: booleano;
+    B- $b: string;
+    C- $c: string;
+    D- $d: integer;
+    F- $f: integer;
+    G- $g: integer;
+
+2- Identificar operadores:
+
+    A- Operadores unarios: en este caso el ++ usado por ej en la invocación de la function doble -> doble($d++)    
+
+    B- Operadoes binarios: = , +=, * usados por ejemplo en:
+
+        - $a = TRUE;
+        - $d+= 4;
+        - return $i*2;
+    
+    C- Operadores ternarios: :, ? usados por ejemplo en: $d = $a ? ++$d : $d*3;
+
+3- Identificar funciones y sus parametros: 
+
+    I - function doble($i) { 
+        return $i*2; 
+    } Utiliza parametro por valor $d++ 
+
+4- Identificar las estructuras de control:
+
+    I - if (is_int($d)) { 
+        $d += 4; 
+    }
+
+    II - if (is_string($a)) { 
+        echo "Cadena: $a"; 
+    }
+
+5- Identificar cual es la salida por pantalla:
+
+    boolean string string integer 1 xyz xyz 18 44 44
+
+    boolean string string integer corresponde a los echo gettype() del principio. 1 xyz xyz 18 44 44 corresonde a echo $a, $b, $c, $d, $g, $f 
+    respectivamente.
+
+    

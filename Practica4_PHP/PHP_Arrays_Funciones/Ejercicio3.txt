@@ -1,0 +1,25 @@
+
+A- 
+    <?php 
+        $fun = getdate(); 
+        echo "Has entrado en esta pagina a las $fun[hours] horas, 
+        con $fun[minutes] minutos y $fun[seconds] segundos, 
+        del $fun[mday]/$fun[mon]/$fun[year]"; 
+    ?>
+
+    Al asignarle a la variable $fun el array asociativo resultante de ejecutar getdate(), ahora podemos acceder a los campos 'hours', 'minutes',
+    'seconds', 'mday','mon' y 'year'. Que llegando al echo resultaria en la visualización por ejemplo: 
+    "Has entrado en esta pagina a las 5 horas, con 44 minutos y 23 segundos, del 10/6/2026".
+
+B-
+
+    <?php function sumar($sumando1,$sumando2){
+        $suma=$sumando1+$sumando2;
+        echo $sumando1."+".$sumando2."=".$suma;
+        }
+        sumar(5,6);
+    ?>
+
+    En este caso se define la función sumar que utiliza parametros por valor. Las variables $sumando1 y $sumando2 asumen los valores 5 y 6
+    respectivamente y luego la variable $suma se le asgina la suma de ambos. Termina mostrando la salida: 5+6=11.
+

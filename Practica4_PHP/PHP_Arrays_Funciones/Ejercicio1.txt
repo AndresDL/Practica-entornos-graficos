@@ -1,0 +1,17 @@
+
+Indicar si los siguientes segmentos de codigo son equivalentes:
+
+    A- 
+    <?php 
+        $a = array( 'color' => 'rojo', 'sabor' => 'dulce', 'forma' => 'redonda', 'nombre' => 'manzana', 4);
+    ?>
+
+    B-
+    <?php 
+        $a['color'] = 'rojo'; $a['sabor'] = 'dulce'; $a['forma'] = 'redonda'; $a['nombre'] = 'manzana'; $a[] = 4;
+    ?>
+
+Los segmentos de codigo son equivalentes. En ambos se crea una matriz asociativa con los campos 'color', 'sabor', 'forma', 'nombre' y 
+que seran rellenados con los valores 'rojo', 'dulce', 'redonda' y 'manzana' respectivamente. En cuanto al ultimo contenido, el numero 4, 
+en el primer caso se crea directamente el array con el numero adentro, en el segundo se le asgina a un espacio vacio dentro del array el numero. 
+Haciendo un foreach() e iterando los cotenidos del array se obtiene la visualización: "rojo dulce rendonda manzana 4" en ambos casos.

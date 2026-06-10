@@ -1,0 +1,37 @@
+
+A- 
+    <?php 
+        $matriz = array("x" => "bar", 12 => true); 
+        echo $matriz["x"];
+        echo $matriz[12]; 
+    ?>
+
+    En este caso se le asigna a la matriz el string "bar" en el campo "x" y TRUE en en la posición 12. Con lo cual al hacer echo de ambos la 
+    visualización resultante es "bar1". El 1 debido a que php transforma el valor booleano True a un integer 1 (y al False en 0).
+
+B-  
+
+    <?php 
+        $matriz = array("unamatriz" => array(6 => 5, 13 => 9, "a" => 42)); 
+        echo $matriz["unamatriz"][6]; 
+        echo $matriz["unamatriz"][13]; 
+        echo $matriz["unamatriz"]["a"]; 
+    ?>
+    
+    En este caso crea una variable $matriz y se le asigna un array que contiene el campo "unamatriz" el cual contiene al array el cual contiene
+    en su sexta posición el numero 5, en su decimo tercera posición el numero 9 y en el campo "a" el numero 42. Con lo cual al hacer echo 
+    de $matriz en el campo "unamatriz" en su sexta y decimo tercera posición, y en el campo "a" la visualización resultante es: 5942.
+
+C-
+
+    <?php 
+        $matriz = array(5 => 1, 12 => 2); 
+        $matriz[] = 56; 
+        $matriz["x"] = 42; 
+        unset($matriz[5]); 
+        unset($matriz);
+    ?>
+
+    En este caso no resultaria ningua visualización ya que no hay ningua sentencia echo o print. Sin embargo, tambien importaria donde se 
+    encunetran dichas sentecias ya que si se ponen debajo de la sentencia unset($matriz) ya no habra una matriz para mostrar resultando en
+    mensaje de error.
