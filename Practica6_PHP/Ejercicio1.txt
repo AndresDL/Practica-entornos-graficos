@@ -1,0 +1,59 @@
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es
+necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función:
+
+    mysqli_connect (mysql_connect) Esta función nos permite crear una conexión con una base de datos concreta.
+
+Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:
+
+    $hostname es un nombre de servidor (dato que debemos consultar en nuestra cuenta de hosting).
+
+    $nombreUsuario es el nombre de usuario de base de datos, nombre que habremos especificado al crear la base 
+    de datos (si no lo hemos hecho, puede ser root).
+
+    $contraseña es la contraseña de acceso para el usuario de base de datos, contraseña que habremos especificado 
+    al crear la base de datos.
+
+Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función:
+
+    mysqli_select_db (mysql_select_db)Esta función nos permite seleccionar una base de datos concreta dentro de todas las existentes en el
+    servidor al que nos conectemos. 
+
+Esta función debe pasar como parámetro:
+
+    $nombreConexión, $nombreBaseDatos
+
+La función mysqli_query () se utiliza para:
+    
+    Esta función nos permite ejecutar una consulta SQL a la base de datos que especifiquemos.
+
+y requiere como parámetros:
+
+    La sintaxis es: $result = mysqli_query($nombreConexion,"Consulta aquí"); ó mysqli_query($nombreConexion, $query);
+
+La cláusula or die() se utiliza para:
+
+    Capturar el error
+
+y la función mysqli_error () se puede usar para: 
+
+    Devolver el último mensaje de error para la llamada más reciente a una función de MySQLi que puede haberse 
+    ejecutado correctamente o haber fallado.
+
+<?php
+    while ($fila = mysqli_fetch_array($vResultado)) El while recorre todas las filas obtenidas del mysqli_fetch_array().
+    {
+?>
+    <tr>
+        <td><?php echo ($fila[0]); ?></td>
+        <td><?php echo ($fila[1]); ?></td>
+        <td><?php echo ($fila[2]); ?></td> Imprime en una tabla HTML los contenidos del array %fila en las posiciones 0 (1) , 1 (2) y 2 (3).
+    </tr>
+    <tr>
+        <td colspan="5">
+    </tr>
+<?php
+    }
+    mysqli_free_result($vResultado); Libera la memoria asociada con el resultado obtenido.
+
+    mysqli_close($link); Cierra la conexión con la base de datos.
+?>
